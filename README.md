@@ -1,4 +1,4 @@
-## Kanban Application
+## Kanban Application   GIO: register Spike for AA 2022-2023
 
 This is a simple implementation of a Kanban Board, a tool that helps visualize and manage work. Originally it was first created in Toyota automotive, but nowadays it's widely used in software development.
 
