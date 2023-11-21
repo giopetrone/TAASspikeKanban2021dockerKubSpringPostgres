@@ -20,4 +20,4 @@ spec:
         - name: kanban-ui
           image: wkrzywiec/kanban-ui:k8s
           ports:
-            - containerPort: 80
+            - containerPort: 8080

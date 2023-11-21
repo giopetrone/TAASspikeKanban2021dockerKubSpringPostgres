@@ -19,6 +19,7 @@ spec:
       containers:
         - name: kanban-app
           image: wkrzywiec/kanban-app:k8s
+          imagePullPolicy: Never
           ports:
             - containerPort: 8080
           envFrom:
