@@ -8,6 +8,8 @@ services:
       - kanban-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+    networks:
+      kanbnet:
     environment:
       - POSTGRES_DB=kanban
       - POSTGRES_USER=kanban
@@ -23,7 +25,9 @@ services:
       - POSTGRES_PASSWORD=kanban
     ports:
       - 8080:8080
-    links:
+    networks:
+      kanbnet:
+    depends_on:
       - kanban-postgres
 
   kanban-ui:
@@ -31,9 +35,12 @@ services:
     container_name: kanban-ui
     ports:
       - 4200:80
-    links:
+    networks:
+      kanbnet:
+    depends_on:
       - kanban-app
-
-
 volumes:
   kanban-data:
+networks:
+  kanbnet:
+    driver: bridge
